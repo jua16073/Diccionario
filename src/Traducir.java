@@ -1,9 +1,11 @@
+/**
+ * @author Rodrigo Alvarado 16106
+ * @author Pokex sepa putas que carnet
+ */
+
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
-import java.lang.Object;
-import java.util.TreeSet;
-
 import javax.swing.JFileChooser;
 public class Traducir {
 	BinaryTree<Association<String, String>> tree= new BinaryTree<Association<String, String>>();
@@ -32,15 +34,24 @@ public class Traducir {
 		tree.insert(new Association<String, String>(palabras[0], palabras[1]));
 	}
 	
+	
+	/**
+	 * @param texto a ser traducido
+	 * @return texto traducid0
+	 * Metodo toma un texto, lo separa, y luego busca coincidencias en el binary tree. De no encontrarlas agrega a la cadena de "texto traducido" la palabra
+	 * ingresada entre asteriscos
+	 */
 	public String traduccion(String texto){
 		String traducido="";
 		texto = texto.toLowerCase();
 		String palabrasATraducir[] = texto.split("\\s+");
 		for (int i=0; i<palabrasATraducir.length;i++){
 			String x =palabrasATraducir[i];
-			System.out.println(x);
-			if (tree.find(new Association<String, String>("",x)) == null){
-				System.out.println("Holiiiii");
+			Association<String, String> traduccion = tree.find(new Association<String, String>(x,""));
+			if ( traduccion != null){
+				traducido = traducido + traduccion.getValue() +" ";
+			}else{
+				traducido = traducido + "*"+x+"* ";
 			}
 		}
 		return traducido;

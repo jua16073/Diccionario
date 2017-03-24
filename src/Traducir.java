@@ -25,10 +25,11 @@ public class Traducir {
 		}
 	
 	public void llenar(String pal){
-		String palabras[]= pal.split(",");
+		String palabras[]= pal.split(" ");
 		int x=0;
 		while (x<palabras.length){
-			System.out.println();
+			System.out.println(palabras[x]);
+			x++;
 		}
 	}
 

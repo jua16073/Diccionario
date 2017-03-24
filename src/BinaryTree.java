@@ -1,4 +1,5 @@
  /* Class BT */
+// Extraido de:  http://algorithms.tutorialhorizon.com/binary-search-tree-complete-implementation/
  public class BinaryTree<E extends Comparable<E>>
  {
 		// Variable del nodo

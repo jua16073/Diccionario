@@ -11,6 +11,13 @@ public class Traducir {
 	BinaryTree<Association<String, String>> tree= new BinaryTree<Association<String, String>>();
 	Association<String, String> as;
 	
+	/**
+	 * @return a
+	 * @throws IOException
+	 * Metodo para buscar un archivo, en este caso el diccionario, leyendo linea por linea lo contenido en el
+	 * y mandando esas lineas al metodo llenar. 
+	 * Devuelve el String con todas las palabras
+	 */
 	String lectura() throws IOException{
 			String a = ""; 
 		
@@ -29,6 +36,11 @@ public class Traducir {
 			return a;
 		}
 	
+	/**
+	 * @param pal
+	 * Metodo que divide las palabras escritas en una linea del texto separadas por una coma
+	 * y las inserta en el arbol
+	 */
 	public void llenar(String pal){
 		String palabras[]= pal.split(",");
 		tree.insert(new Association<String, String>(palabras[0], palabras[1]));

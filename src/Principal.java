@@ -8,7 +8,6 @@ public class Principal {
 		Traducir trad= new Traducir();
 		String y= trad.lectura();
 		System.out.println(y);
-		trad.llenar(y);
 		System.out.println("Ingrese el texto a traducir");
 		String text= teclado.nextLine();
 	}

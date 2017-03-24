@@ -16,7 +16,8 @@ public class Traducir {
 			String pal;
 			while(reader.ready()){
 				while ((pal=reader.readLine())!= null){
-					a= a+" "+pal;
+					a=a+" "+pal;
+					llenar(pal);
 				}
 				//a = reader.readLine();
 				return a;
@@ -25,7 +26,7 @@ public class Traducir {
 		}
 	
 	public void llenar(String pal){
-		String palabras[]= pal.split(" ");
+		String palabras[]= pal.split(",");
 		int x=0;
 		while (x<palabras.length){
 			System.out.println(palabras[x]);

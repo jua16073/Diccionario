@@ -3,52 +3,46 @@
  */
  
  /* Class BTNode */
- class BTNode
+ class BTNode<E>
  {    
-     BTNode left, right;
-     int data;
+     BTNode<E> left, right;
+     E data;
  
      /* Constructor */
-     public BTNode()
+     public BTNode(E data)
      {
          left = null;
          right = null;
-         data = 0;
+         this.data = data;
      }
-     /* Constructor */
-     public BTNode(int n)
-     {
-         left = null;
-         right = null;
-         data = n;
-     }
+
      /* Function to set left node */
-     public void setLeft(BTNode n)
+     public void setLeft(BTNode<E> n)
      {
          left = n;
      }
      /* Function to set right node */ 
-     public void setRight(BTNode n)
+     public void setRight(BTNode<E> n)
      {
          right = n;
      }
      /* Function to get left node */
-     public BTNode getLeft()
+     public BTNode<E> getLeft()
      {
          return left;
      }
      /* Function to get right node */
-     public BTNode getRight()
+     public BTNode<E> getRight()
      {
          return right;
      }
      /* Function to set data to node */
-     public void setData(int d)
+     public void setData(E d)
      {
          data = d;
      }
      /* Function to get data from node */
-     public int getData()
+     public E getData()
      {
          return data;
      }     

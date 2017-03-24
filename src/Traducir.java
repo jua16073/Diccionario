@@ -6,8 +6,8 @@ import java.util.TreeSet;
 
 import javax.swing.JFileChooser;
 public class Traducir {
-	BinaryTree tree= new BinaryTree();
-	Association as;
+	BinaryTree<Association<String, String>> tree= new BinaryTree<Association<String, String>>();
+	Association<String, String> as;
 	
 	String lectura() throws IOException{
 			String a = ""; 
@@ -21,7 +21,7 @@ public class Traducir {
 					a=a+" "+pal;
 					llenar(pal);
 				}
-				//a = reader.readLine();
+				//String w=tree.find(new Association<String, String>("yes","si")).toString();
 				return a;
 			}
 			return a;
@@ -29,13 +29,21 @@ public class Traducir {
 	
 	public void llenar(String pal){
 		String palabras[]= pal.split(",");
-		int x=0;
-		while (x<palabras.length){
-			System.out.println(palabras[x]);
-			x++;
+		tree.insert(new Association<String, String>(palabras[0], palabras[1]));
+	}
+	
+	public String traduccion(String texto){
+		String traducido="";
+		texto = texto.toLowerCase();
+		String palabrasATraducir[] = texto.split("\\s+");
+		for (int i=0; i<palabrasATraducir.length;i++){
+			String x =palabrasATraducir[i];
+			System.out.println(x);
+			if (tree.find(new Association<String, String>("",x)) == null){
+				System.out.println("Holiiiii");
+			}
 		}
-		as = new Association(palabras[0], palabras[1]);
-		tree.insert(as);
+		return traducido;
 	}
 
 

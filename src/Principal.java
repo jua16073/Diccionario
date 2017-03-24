@@ -10,6 +10,7 @@ public class Principal {
 		System.out.println(y);
 		System.out.println("Ingrese el texto a traducir");
 		String text= teclado.nextLine();
+		System.out.println(trad.traduccion(text));
 	}
 
 }

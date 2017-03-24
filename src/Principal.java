@@ -1,6 +1,6 @@
 /**
  * @author Rodrigo Alvarado 16106
- * @author Pokex sepa putas que carnet
+ * @author Rodrigo Juarez 16073
  */
 
 import java.io.IOException;

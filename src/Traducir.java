@@ -6,6 +6,8 @@ import java.util.TreeSet;
 
 import javax.swing.JFileChooser;
 public class Traducir {
+	BinaryTree tree= new BinaryTree();
+	Association as;
 	
 	String lectura() throws IOException{
 			String a = ""; 
@@ -32,6 +34,8 @@ public class Traducir {
 			System.out.println(palabras[x]);
 			x++;
 		}
+		as = new Association(palabras[0], palabras[1]);
+		tree.insert(as);
 	}
 
 
